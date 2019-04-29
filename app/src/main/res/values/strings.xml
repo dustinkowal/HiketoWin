@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Hike to Win</string>
+    <string name="action_add_hike">Add a Hike</string>
+    <string name="action_duluth_trails">Duluth Trails</string>
+
+    <string name="textViewTop">Enter Hike Information Below</string>
+    <string name="textInputTrailName">Trail Name</string>
+    <string name="textInputTime">Time Spent Hiking (Hours)</string>
+    <string name="buttonAdd">Add Hike</string>
+    <string name="action_login">Login</string>
+    <string name="textViewLoginTitle">Enter Your Email and Password</string>
+
+    <string name="textInputEmail">Email</string>
+    <string name="textInputPassword">Password</string>
+    <string name="buttonLogin">Login</string>
+    <string name="buttonCreateAccount">Create Account</string>
+
+    <string name="textViewLeaderboards">Leaderboards</string>
+    <string name="textViewName">Name</string>
+    <string name="textViewTimeSpent">Time Spent</string>
+    <string name="textViewPoints">Points</string>
+
+</resources>
