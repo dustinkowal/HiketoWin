@@ -21,4 +21,6 @@
     <string name="textViewTimeSpent">Time Spent</string>
     <string name="textViewPoints">Points</string>
 
+    <string name="textViewTrailTitle">Duluth Trails</string>
+
 </resources>
