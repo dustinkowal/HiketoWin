@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -39,10 +40,19 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        String email = textInputEmail.getText().toString();
+        String password = textInputPassword.getText().toString();
+
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 createNewUser();
+            }
+        });
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
             }
         });
     }
@@ -56,15 +66,48 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
                         }
                         else{
                             Toast.makeText(getApplicationContext(), "Registration unsuccessful...", Toast.LENGTH_LONG).show();
                         }
-                        finish();
                     }
                 });
 
+    }
+
+    private void login(){
+        String email = textInputEmail.getText().toString();
+        String password = textInputPassword.getText().toString();
+        //sign in the recurrent user with email and password previously created.
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() { //add to listener
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (!task.isSuccessful()) { //when failed
+                    Toast.makeText(LoginActivity.this, "Login--Authentication failed.",Toast.LENGTH_LONG).show();
+                } else {
+                    //return to MainActivity is login works
+                    Toast.makeText(LoginActivity.this, "Login Successful!",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+    private void logiin(){
+        String email = textInputEmail.getText().toString();
+        String password = textInputEmail.getText().toString();
+        //sign in the recurrent user with email and password previously created.
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() { //add to listener
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Login unsuccessful...", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     @Override

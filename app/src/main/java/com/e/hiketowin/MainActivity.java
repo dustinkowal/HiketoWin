@@ -129,4 +129,20 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+/*
+    @Override
+    public void onStart() {
+        //initiate the authentication listener
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener); // update the listener on the users place
+    }
+
+    @Override
+    public void onStop() {
+        //discontinue the authentication
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener); // remove the listener
+        }
+    }*/
 }
