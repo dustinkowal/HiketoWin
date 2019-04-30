@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference myHikeDbRef;
     List<Hike> hikeList;
     ArrayAdapter<Hike> hikeAdapter;
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-  /*      // Write a message to the database
+     /*   // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
@@ -107,22 +111,22 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_add_hike) {
-            Intent detailHikeIntent = new Intent(this, AddHikeActivity.class);
-            finish();
-            startActivity(detailHikeIntent);
+                Intent detailHikeIntent = new Intent(getBaseContext(), AddHikeActivity.class);
+                finish();
+                startActivity(detailHikeIntent);
         }
         if (id == R.id.action_login) {
             Intent loginIntent = new Intent(this, LoginActivity.class);
             finish();
             startActivity(loginIntent);
+
         }
         if (id == R.id.action_duluth_trails) {
-            Intent duluthTrailsIntent = new Intent(this, DuluthTrailsActivity.class);
+            Intent duluthTrailsIntent = new Intent(getBaseContext(), DuluthTrailsActivity.class);
             finish();
             startActivity(duluthTrailsIntent);
         }
 
         return super.onOptionsItemSelected(item);
     }
-
 }

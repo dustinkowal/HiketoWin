@@ -8,6 +8,7 @@
     <string name="textInputTime">Time Spent Hiking (Hours)</string>
     <string name="buttonAdd">Add Hike</string>
     <string name="action_login">Login</string>
+    <string name="action_leaderboard">Leaderboard</string>
     <string name="textViewLoginTitle">Enter Your Email and Password</string>
 
     <string name="textInputEmail">Email</string>

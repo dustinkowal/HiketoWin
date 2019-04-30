@@ -30,8 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         buttonCreate = (Button) findViewById(R.id.buttonCreateAccount);
@@ -62,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                         else{
                             Toast.makeText(getApplicationContext(), "Registration unsuccessful...", Toast.LENGTH_LONG).show();
                         }
+                        finish();
                     }
                 });
 
@@ -70,7 +70,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 
@@ -87,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             finish();
             startActivity(detailHikeIntent);
         }
-        if (id == R.id.action_leaderboard) {
+        if (id == R.id.action_main) {
             Intent mainIntent = new Intent(this, MainActivity.class);
             finish();
             startActivity(mainIntent);
