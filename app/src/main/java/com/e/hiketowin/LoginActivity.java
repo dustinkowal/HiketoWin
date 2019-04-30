@@ -93,22 +93,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    private void logiin(){
-        String email = textInputEmail.getText().toString();
-        String password = textInputEmail.getText().toString();
-        //sign in the recurrent user with email and password previously created.
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() { //add to listener
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Login unsuccessful...", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
