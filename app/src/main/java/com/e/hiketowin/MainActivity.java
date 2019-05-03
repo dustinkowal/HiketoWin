@@ -42,14 +42,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+        //FIXME this causes app to crash
+        //setupFirebaseDataChange();
+
+        //FIXME this causes app to crash
+        //create Hike object for each trail in Duluth
+        //hikeDataSource.createHikes();
 
      /*   // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -73,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.w("CIS 3334", "Failed to read value.", error.toException());
             }
         });*/
+
+
     }
 
     private void setupFirebaseDataChange() {
