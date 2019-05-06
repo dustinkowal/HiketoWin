@@ -23,5 +23,24 @@ public class HikeAdapter extends ArrayAdapter<Hike> {
         this.hikeList = hikeList;
     }
 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        //get the fish we are displaying
+        Hike hike = hikeList.get(position);
+        View view;
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+        //view = inflater.inflate(R.layout.fish_row_layout, null);
+        view = inflater.inflate(R.layout.hike_row_layout, null);
+
+        TextView textViewTrailName =(TextView)view.findViewById(R.id.textViewTrailName);
+        TextView textViewDistance =(TextView)view.findViewById(R.id.textViewDistance);
+        TextView textViewPoints=(TextView)view.findViewById(R.id.textViewPoints);
+        textViewTrailName.setText(hike.getName());
+        textViewDistance.setText(hike.getDistance());
+        textViewPoints.setText(hike.getPoints());
+
+        return(view);
+    }
 
 }

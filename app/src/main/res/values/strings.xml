@@ -23,4 +23,8 @@
 
     <string name="textViewTrailTitle">Duluth Trails</string>
 
+    <string name="textViewTrailName">Trail Name</string>
+    <string name="textViewTrailDistance">Trail Distance (miles)</string>
+    <string name="textViewTrailPoints">Trail Points</string>
+
 </resources>
