@@ -48,6 +48,7 @@ public class HikeFirebaseData {
     public List<Hike> getAllHikes(DataSnapshot dataSnapshot) {
         List<Hike> hikeList = new ArrayList<Hike>();
         Log.d("CIS3334", "Starting for each loop");
+        //FIXME this causes app to crash
         for (DataSnapshot data : dataSnapshot.getChildren()) {
             Hike hike = data.getValue(Hike.class);
             hikeList.add(hike);
